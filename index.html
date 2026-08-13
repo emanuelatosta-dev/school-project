@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Horizon Academy & Teacher Portal | Excellence in Education</title>
+  <meta name="description" content="Apex Horizon Academy - Premier K-12 educational institution providing innovative learning, expert faculty, interactive teacher tools, and student growth programs.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons (FontAwesome CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">APEX HORIZON</span>
+          <span class="brand-sub">ACADEMY</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#teachers" class="nav-link">Teachers Directory</a></li>
+          <li><a href="#academics" class="nav-link">Academics</a></li>
+          <li><a href="#teacher-suite" class="nav-link">Teacher Suite</a></li>
+          <li><a href="#student-portal" class="nav-link">Student Portal</a></li>
+          <li><a href="#game-section" class="nav-link highlight-link"><i class="fa-solid fa-gamepad"></i> School Quest</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme" title="Toggle dark/light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#teacher-suite" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-user-gear"></i> Portal Access
+        </a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge badge-accent animate-fade-down">
+          <i class="fa-solid fa-award"></i> Ranked #1 School of Excellence 2026
+        </div>
+        <h1 class="hero-title animate-fade-up">Empowering Minds, Shaping Tomorrow's Leaders</h1>
+        <p class="hero-subtitle animate-fade-up delay-1">
+          Welcome to Apex Horizon Academy. We combine innovative digital learning tools, world-class faculty, and vibrant campus life to foster curiosity, character, and academic mastery.
+        </p>
+        <div class="hero-buttons animate-fade-up delay-2">
+          <a href="#teachers" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-chalkboard-user"></i> Meet Our Faculty
+          </a>
+          <a href="#game-section" class="btn btn-outline btn-lg">
+            <i class="fa-solid fa-play"></i> Play School Quest Game
+          </a>
+        </div>
+        
+        <!-- Live Counters -->
+        <div class="hero-stats animate-fade-up delay-3">
+          <div class="stat-card">
+            <span class="stat-number" data-target="99.4">99.4%</span>
+            <span class="stat-label">Graduation Rate</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="65">65+</span>
+            <span class="stat-label">Expert Educators</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="1250">1,250+</span>
+            <span class="stat-label">Active Students</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="35">35+</span>
+            <span class="stat-label">AP & Honors Courses</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-card">
+          <div class="hero-badge">
+            <i class="fa-solid fa-star"></i>
+            <div>
+              <strong>4.9 / 5.0 Rating</strong>
+              <small>Parent & Student Satisfaction</small>
+            </div>
+          </div>
+          <div class="hero-illustration">
+            <div class="school-illustration-box">
+              <i class="fa-solid fa-school-flag hero-big-icon"></i>
+              <div class="floating-bubble bubble-1">
+                <i class="fa-solid fa-atom"></i> STEM Center
+              </div>
+              <div class="floating-bubble bubble-2">
+                <i class="fa-solid fa-book-open"></i> Global Library
+              </div>
+              <div class="floating-bubble bubble-3">
+                <i class="fa-solid fa-laptop-code"></i> AI & Robotics Lab
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Vision Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Why Apex Horizon</span>
+        <h2 class="section-title">Built for Inspired Learning & Great Teaching</h2>
+        <p class="section-subtitle">We empower students to thrive in a rapidly changing world through inquiry-based learning, personalized guidance, and modern school technologies.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="feature-card">
+          <div class="feature-icon bg-blue">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+          <h3>Student-Centered Growth</h3>
+          <p>Differentiated instruction tailored to each student's learning pace, strengths, and personal academic goals.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon bg-purple">
+            <i class="fa-solid fa-chalkboard-teacher"></i>
+          </div>
+          <h3>Empowered Teachers</h3>
+          <p>Our educators receive continuous professional development, state-of-the-art tools, and supportive administrative infrastructure.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon bg-emerald">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3>Tech-Integrated Learning</h3>
+          <p>Smart classrooms, interactive digital portfolios, AI-assisted gradebooks, and engaging gamified study modules.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teachers Directory Section -->
+  <section class="teachers-section" id="teachers">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Faculty Directory</span>
+          <h2 class="section-title">Meet Our Distinguished Teachers</h2>
+          <p class="section-subtitle">Dedicated educators inspiring curiosity, critical thinking, and character every day.</p>
+        </div>
+        <div class="search-filter-box">
+          <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="teacher-search" placeholder="Search teacher by name, subject, or credential...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Department Filter Chips -->
+      <div class="filter-chips" id="department-filters">
+        <button class="chip active" data-dept="all">All Departments</button>
+        <button class="chip" data-dept="stem">STEM & Tech</button>
+        <button class="chip" data-dept="humanities">Humanities & English</button>
+        <button class="chip" data-dept="arts">Arts & Music</button>
+        <button class="chip" data-dept="sports">Athletics & PE</button>
+        <button class="chip" data-dept="special">Special Education</button>
+      </div>
+
+      <!-- Teachers Grid Container -->
+      <div class="teachers-grid" id="teachers-grid">
+        <!-- JS dynamically populates teacher cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Teacher Detail Modal -->
+  <div class="modal" id="teacher-modal" aria-hidden="true">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Academics & Curriculum Section -->
+  <section class="academics-section" id="academics">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Curriculum & Pathways</span>
+        <h2 class="section-title">Academic Excellence Across All Grades</h2>
+        <p class="section-subtitle">From foundation concepts to Advanced Placement (AP) honors, our curriculum fosters deep understanding.</p>
+      </div>
+
+      <div class="tabs-wrapper">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="elem">Elementary School</button>
+          <button class="tab-btn" data-tab="middle">Middle School</button>
+          <button class="tab-btn" data-tab="high">High School & AP</button>
+        </div>
+        <div class="tab-content-container">
+          <div class="tab-pane active" id="tab-elem">
+            <div class="program-grid">
+              <div class="program-card">
+                <h4><i class="fa-solid fa-shapes"></i> Foundational STEM</h4>
+                <p>Interactive math games, hands-on science experiments, and introductory robotics build early inquiry habits.</p>
+              </div>
+              <div class="program-card">
+                <h4><i class="fa-solid fa-book"></i> Language Arts & Literacy</h4>
+                <p>Phonics, creative writing workshops, and guided reading groups cultivate a lifelong love of literature.</p>
+              </div>
+              <div class="program-card">
+                <h4><i class="fa-solid fa-palette"></i> Creative Arts & Expression</h4>
+                <p>Visual arts, choral music, and drama foster self-expression, confidence, and motor skill development.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="tab-middle">
+            <div class="program-grid">
+              <div class="program-card">
+                <h4><i class="fa-solid fa-flask"></i> Integrated Life & Physical Sciences</h4>
+                <p>Lab-based investigations exploring physics concepts, environmental science, and biological ecosystems.</p>
+              </div>
+              <div class="program-card">
+                <h4><i class="fa-solid fa-calculator"></i> Pre-Algebra & Algebra Foundations</h4>
+                <p>Developing logical reasoning, algebraic thinking, data analysis, and geometric spatial problem solving.</p>
+              </div>
+              <div class="program-card">
+                <h4><i class="fa-solid fa-earth-americas"></i> World Cultures & Social Studies</h4>
+                <p>Exploring global civilizations, geography, civics, and critical analysis of historical events.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="tab-high">
+            <div class="program-grid">
+              <div class="program-card">
+                <h4><i class="fa-solid fa-code"></i> Computer Science & AI Ethics</h4>
+                <p>Python programming, web development, data structures, and ethical implications of artificial intelligence.</p>
+              </div>
+              <div class="program-card">
+                <h4><i class="fa-solid fa-dna"></i> AP Biology & AP Chemistry</h4>
+                <p>Rigorous college-level laboratory science courses preparing students for top university STEM majors.</p>
+              </div>
+              <div class="program-card">
+                <h4><i class="fa-solid fa-scale-balanced"></i> AP Literature & Modern History</h4>
+                <p>Advanced analytical essay writing, philosophical discourse, and thorough research methodologies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Teacher Suite (Management Tool) Section -->
+  <section class="teacher-suite-section" id="teacher-suite">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-chalkboard"></i> Interactive Educator Toolkit</span>
+          <h2 class="section-title">Teacher Dashboard & Classroom Tools</h2>
+          <p class="section-subtitle">Real-time attendance tracker, GPA gradebook calculator, and instant lesson planner built for educators.</p>
+        </div>
+      </div>
+
+      <div class="suite-card">
+        <div class="suite-tabs">
+          <button class="suite-tab-btn active" data-suite="attendance"><i class="fa-solid fa-clipboard-user"></i> Attendance Logger</button>
+          <button class="suite-tab-btn" data-suite="gradebook"><i class="fa-solid fa-calculator"></i> Gradebook & GPA</button>
+          <button class="suite-tab-btn" data-suite="lesson"><i class="fa-solid fa-pen-ruler"></i> Lesson Planner</button>
+        </div>
+
+        <div class="suite-content">
+          <!-- Attendance Logger Suite -->
+          <div class="suite-pane active" id="suite-attendance">
+            <div class="suite-pane-header">
+              <div class="class-selector-group">
+                <label for="class-select"><strong>Select Class:</strong></label>
+                <select id="class-select" class="form-select">
+                  <option value="math101">Grade 10 - Advanced Physics (Period 2)</option>
+                  <option value="cs202">Grade 11 - Computer Science (Period 4)</option>
+                  <option value="eng301">Grade 12 - AP Literature (Period 6)</option>
+                </select>
+                <span class="badge badge-info" id="attendance-date-badge">Today: <span id="current-date-str"></span></span>
+              </div>
+              <button class="btn btn-emerald btn-sm" id="btn-save-attendance"><i class="fa-solid fa-check"></i> Save Attendance</button>
+            </div>
+
+            <div class="attendance-summary-bar">
+              <div class="att-stat"><span id="att-present-count" class="badge-present">0</span> Present</div>
+              <div class="att-stat"><span id="att-absent-count" class="badge-absent">0</span> Absent</div>
+              <div class="att-stat"><span id="att-late-count" class="badge-late">0</span> Late</div>
+              <div class="att-stat"><strong>Attendance Rate:</strong> <span id="att-percentage">100%</span></div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table" id="attendance-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Student Name</th>
+                    <th>Roll ID</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody id="attendance-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Gradebook Suite -->
+          <div class="suite-pane" id="suite-gradebook">
+            <div class="suite-pane-header">
+              <h3><i class="fa-solid fa-chart-column"></i> Weighted Gradebook Calculator</h3>
+              <button class="btn btn-primary btn-sm" id="add-student-btn"><i class="fa-solid fa-user-plus"></i> Add Student Score</button>
+            </div>
+            
+            <div class="grid grid-2 gradebook-layout">
+              <div class="gradebook-table-col">
+                <div class="table-responsive">
+                  <table class="data-table" id="gradebook-table">
+                    <thead>
+                      <tr>
+                        <th>Student Name</th>
+                        <th>Homework (20%)</th>
+                        <th>Midterm (40%)</th>
+                        <th>Final (40%)</th>
+                        <th>Overall Grade</th>
+                      </tr>
+                    </thead>
+                    <tbody id="gradebook-tbody">
+                      <!-- Populated via JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="gradebook-stats-col">
+                <div class="grade-analytics-box">
+                  <h4><i class="fa-solid fa-chart-pie"></i> Class Performance Summary</h4>
+                  <div class="metric-row">
+                    <span>Class Average:</span>
+                    <strong id="class-avg-display" class="metric-val">88.5% (B+)</strong>
+                  </div>
+                  <div class="metric-row">
+                    <span>Highest Score:</span>
+                    <strong id="class-highest-display" class="metric-val">98.0% (A+)</strong>
+                  </div>
+                  <div class="metric-row">
+                    <span>Passing Students:</span>
+                    <strong id="class-pass-display" class="metric-val">100%</strong>
+                  </div>
+                  <div class="grade-distribution-bar">
+                    <div class="dist-seg seg-a" title="A Grade: 60%" style="width: 60%;">A (60%)</div>
+                    <div class="dist-seg seg-b" title="B Grade: 30%" style="width: 30%;">B (30%)</div>
+                    <div class="dist-seg seg-c" title="C Grade: 10%" style="width: 10%;">C</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lesson Planner Suite -->
+          <div class="suite-pane" id="suite-lesson">
+            <div class="lesson-planner-grid">
+              <div class="planner-form">
+                <h4><i class="fa-solid fa-pen-to-square"></i> Quick Lesson Creator</h4>
+                <div class="form-group">
+                  <label for="lesson-title">Lesson Title:</label>
+                  <input type="text" id="lesson-title" class="form-control" placeholder="e.g. Newton's Third Law of Motion & Rocket Physics">
+                </div>
+                <div class="form-group">
+                  <label for="lesson-subject">Subject & Grade:</label>
+                  <input type="text" id="lesson-subject" class="form-control" placeholder="Physics - Grade 10">
+                </div>
+                <div class="form-group">
+                  <label for="lesson-objective">Learning Objectives:</label>
+                  <textarea id="lesson-objective" class="form-control" rows="3" placeholder="- Understand action and reaction force pairs.&#10;- Calculate momentum transfers in collision scenarios."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="lesson-activities">Classroom Activities:</label>
+                  <textarea id="lesson-activities" class="form-control" rows="3" placeholder="1. 10-min Warmup Quiz&#10;2. Interactive Physics Simulator demonstration&#10;3. Group experiment with balloon rockets."></textarea>
+                </div>
+                <button class="btn btn-primary" id="save-lesson-btn"><i class="fa-solid fa-floppy-disk"></i> Save Lesson Plan</button>
+              </div>
+
+              <div class="saved-lessons-box">
+                <h4><i class="fa-solid fa-folder-open"></i> Saved Lesson Plans</h4>
+                <div id="saved-lessons-list" class="saved-lessons-list">
+                  <!-- Populated via JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Student Portal Section -->
+  <section class="student-portal-section" id="student-portal">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Student Corner</span>
+          <h2 class="section-title">Interactive Practice Quiz & Timetable</h2>
+          <p class="section-subtitle">Test your knowledge, review daily schedules, and download educational resources.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- Interactive Quiz Component -->
+        <div class="quiz-card">
+          <div class="quiz-header">
+            <h3><i class="fa-solid fa-circle-question"></i> Apex Daily Knowledge Challenge</h3>
+            <span class="badge badge-primary" id="quiz-progress-badge">Question 1 of 4</span>
+          </div>
+          <div class="quiz-body">
+            <div id="quiz-question-container">
+              <h4 id="quiz-question-text">Loading question...</h4>
+              <div class="quiz-options" id="quiz-options-container">
+                <!-- Quiz options generated by JS -->
+              </div>
+              <div id="quiz-feedback" class="quiz-feedback hidden"></div>
+            </div>
+            <div class="quiz-controls">
+              <button class="btn btn-outline btn-sm" id="prev-quiz-btn" disabled>Previous</button>
+              <button class="btn btn-primary btn-sm" id="next-quiz-btn">Next Question</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Timetable & Quick Resources -->
+        <div class="timetable-card">
+          <h3><i class="fa-solid fa-calendar-days"></i> Today's Schedule</h3>
+          <ul class="schedule-list">
+            <li class="schedule-item active">
+              <span class="time-badge">08:30 AM - 09:45 AM</span>
+              <div class="item-info">
+                <strong>AP Physics C</strong>
+                <small>Room 302 &bull; Dr. Robert Vance</small>
+              </div>
+              <span class="badge badge-emerald">In Session</span>
+            </li>
+            <li class="schedule-item">
+              <span class="time-badge">10:00 AM - 11:15 AM</span>
+              <div class="item-info">
+                <strong>Algebra II & Trigonometry</strong>
+                <small>Room 108 &bull; Prof. Sarah Jenkins</small>
+              </div>
+            </li>
+            <li class="schedule-item">
+              <span class="time-badge">11:30 AM - 12:30 PM</span>
+              <div class="item-info">
+                <strong>World History & Civics</strong>
+                <small>Room 214 &bull; Marcus Holloway</small>
+              </div>
+            </li>
+            <li class="schedule-item">
+              <span class="time-badge">01:30 PM - 02:45 PM</span>
+              <div class="item-info">
+                <strong>Computer Science & Web Dev</strong>
+                <small>Tech Lab B &bull; Elena Rostova</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educational Arcade Game Section: "School Quest: Knowledge Runner" -->
+  <section class="game-section" id="game-section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag"><i class="fa-solid fa-gamepad"></i> Interactive Student Mini-Game</span>
+        <h2 class="section-title">School Quest: Knowledge Runner</h2>
+        <p class="section-subtitle">Dodge pop-quizzes, jump over obstacles, collect Knowledge Stars & Diplomas, and aim for the high score!</p>
+      </div>
+
+      <!-- Arcade Game Container -->
+      <div class="arcade-wrapper" id="arcade-wrapper">
+        <!-- Top Game Header Status Bar -->
+        <div class="game-top-bar">
+          <div class="game-stat-box">
+            <i class="fa-solid fa-trophy gold-icon"></i>
+            <span>Score: <strong id="game-score">0</strong></span>
+          </div>
+          <div class="game-stat-box">
+            <i class="fa-solid fa-crown star-icon"></i>
+            <span>High Score: <strong id="game-high-score">0</strong></span>
+          </div>
+          <div class="game-stat-box">
+            <i class="fa-solid fa-star yellow-icon"></i>
+            <span>Stars: <strong id="game-stars-count">0</strong></span>
+          </div>
+          <div class="game-actions">
+            <button id="btn-sound-toggle" class="btn-game-icon" title="Toggle Sound Effects">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+            <button id="btn-game-pause" class="btn-game-icon" title="Pause Game (P)">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Canvas Viewport -->
+        <div class="canvas-container">
+          <canvas id="gameCanvas" width="900" height="420"></canvas>
+          
+          <!-- Start / Game Over / Pause Overlays -->
+          <div class="game-overlay" id="game-start-overlay">
+            <div class="overlay-card animate-pop">
+              <i class="fa-solid fa-graduation-cap overlay-icon"></i>
+              <h2>School Quest: Knowledge Runner</h2>
+              <p>Help Alex run through Apex Horizon Academy campus! Collect stars & books, jump over pop-quiz hurdles, and slide under flying obstacles.</p>
+              
+              <div class="controls-hint-grid">
+                <div class="hint-item"><span class="key-badge">Space</span> / <span class="key-badge">&uarr;</span> Jump</div>
+                <div class="hint-item"><span class="key-badge">&darr;</span> Slide</div>
+                <div class="hint-item"><span class="key-badge">P</span> Pause</div>
+                <div class="hint-item"><span class="key-badge">R</span> Restart</div>
+              </div>
+
+              <button class="btn btn-accent btn-lg" id="btn-start-game">
+                <i class="fa-solid fa-play"></i> Start Quest
+              </button>
+            </div>
+          </div>
+
+          <div class="game-overlay hidden" id="game-over-overlay">
+            <div class="overlay-card animate-pop">
+              <i class="fa-solid fa-circle-xmark overlay-icon error-color"></i>
+              <h2>Pop Quiz Caught You!</h2>
+              <p>Great attempt! Keep practicing to master the academy runner.</p>
+              
+              <div class="score-summary-box">
+                <div class="sum-item">
+                  <span>Final Score:</span>
+                  <strong id="final-score-val">0</strong>
+                </div>
+                <div class="sum-item">
+                  <span>Stars Collected:</span>
+                  <strong id="final-stars-val">0</strong>
+                </div>
+                <div class="sum-item">
+                  <span>High Score:</span>
+                  <strong id="final-high-score-val">0</strong>
+                </div>
+              </div>
+
+              <button class="btn btn-accent btn-lg" id="btn-restart-game">
+                <i class="fa-solid fa-rotate-right"></i> Play Again (R)
+              </button>
+            </div>
+          </div>
+
+          <div class="game-overlay hidden" id="game-pause-overlay">
+            <div class="overlay-card animate-pop">
+              <i class="fa-solid fa-circle-pause overlay-icon"></i>
+              <h2>Game Paused</h2>
+              <p>Take a breath, champion!</p>
+              <button class="btn btn-primary btn-lg" id="btn-resume-game">
+                <i class="fa-solid fa-play"></i> Resume Game
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Touch Controls Bar -->
+        <div class="mobile-controls-bar" id="mobile-controls-bar">
+          <button id="touch-btn-slide" class="touch-btn touch-btn-slide" aria-label="Slide / Duck">
+            <i class="fa-solid fa-arrow-down"></i> SLIDE
+          </button>
+          <button id="touch-btn-jump" class="touch-btn touch-btn-jump" aria-label="Jump / Double Jump">
+            <i class="fa-solid fa-arrow-up"></i> JUMP
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Admission Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="contact-info">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Schedule a School Tour or Request Information</h2>
+          <p>We are delighted to welcome prospective families, students, and educators. Connect with our admissions desk today.</p>
+          
+          <ul class="info-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Campus Address:</strong>
+                <p>750 Academy Way, Horizon Heights, CA 90210</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Admissions Hotline:</strong>
+                <p>+1 (800) 555-APEX / (555) 321-4321</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email Contact:</strong>
+                <p>admissions@apexhorizon.edu</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Office Hours:</strong>
+                <p>Monday - Friday: 7:30 AM - 5:00 PM</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Send Admissions Inquiry</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" class="form-control" required placeholder="Jane Doe">
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" class="form-control" required placeholder="jane@example.com">
+            </div>
+            <div class="form-group">
+              <label for="contact-interest">I am a... *</label>
+              <select id="contact-interest" class="form-control" required>
+                <option value="parent">Prospective Parent / Student</option>
+                <option value="teacher">Educator / Job Applicant</option>
+                <option value="community">Community Member / Partner</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-msg">Message / Inquiry *</label>
+              <textarea id="contact-msg" class="form-control" rows="4" required placeholder="Tell us about your student's grade level and questions..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
+            </button>
+            <div id="form-toast" class="form-toast hidden"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#" class="brand-logo footer-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>APEX HORIZON ACADEMY</span>
+        </a>
+        <p class="footer-desc">Nurturing intellect, character, and leadership in every student since 1998.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Apex</a></li>
+          <li><a href="#teachers">Faculty Directory</a></li>
+          <li><a href="#academics">Academic Programs</a></li>
+          <li><a href="#teacher-suite">Teacher Suite</a></li>
+          <li><a href="#student-portal">Student Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Campus Resources</h4>
+        <ul>
+          <li><a href="#game-section">School Quest Arcade</a></li>
+          <li><a href="#contact">Admissions Guide</a></li>
+          <li><a href="#contact">Campus Map</a></li>
+          <li><a href="#contact">School Calendar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Emergency & Support</h4>
+        <p>Campus Security 24/7 Hotline: <strong>(555) 911-APEX</strong></p>
+        <div class="accreditation-badge">
+          <i class="fa-solid fa-shield-halved"></i> Accredited by Western Association of Schools & Colleges
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 Apex Horizon Academy. All rights reserved.</p>
+        <p>Built with excellence for teachers, students & parents.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/teachers.js"></script>
+  <script src="js/portal.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
