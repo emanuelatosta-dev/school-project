@@ -4,6 +4,27 @@
    animated stat counters, and form handlers.
    ========================================================================== */
 
+// --- FAQ Accordion Handler ---
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      faqItems.forEach(i => i.classList.remove('active'));
+
+      if (!isActive) {
+        item.classList.add('active');
+        if (window.soundEngine) window.soundEngine.playClick();
+      }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initMobileMenu();
@@ -11,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAcademicTabs();
   initStatCounters();
   initContactForm();
+  initFaqAccordion();
 });
 
 // --- Theme Switcher (Dark / Light Mode) ---
