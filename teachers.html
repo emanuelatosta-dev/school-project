@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty Directory & Teachers | Apex Horizon Academy</title>
+  <meta name="description" content="Meet the distinguished teachers and faculty members at Apex Horizon Academy. View office hours, qualifications, bios, and direct contact.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">APEX HORIZON</span>
+          <span class="brand-sub">ACADEMY</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="teachers.html" class="nav-link active">Teachers Directory</a></li>
+          <li><a href="academics.html" class="nav-link">Academics</a></li>
+          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="portal.html" class="nav-link">Teacher & Student Suite</a></li>
+          <li><a href="game.html" class="nav-link highlight-link"><i class="fa-solid fa-gamepad"></i> School Quest</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="portal.html" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-user-gear"></i> Portal Access
+        </a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner bg-subtle">
+    <div class="container">
+      <div class="banner-content">
+        <span class="section-tag"><i class="fa-solid fa-chalkboard-user"></i> Educator Directory</span>
+        <h1 class="page-title">Meet Our Educators & Faculty</h1>
+        <p class="page-subtitle">Dedicated educators inspiring curiosity, critical thinking, and character every day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teachers Directory Section -->
+  <section class="teachers-section" id="teachers">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Search & Filter</span>
+          <h2 class="section-title">Explore Teachers by Department</h2>
+        </div>
+        <div class="search-filter-box">
+          <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="teacher-search" placeholder="Search teacher by name, subject, or credential...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Department Filter Chips -->
+      <div class="filter-chips" id="department-filters">
+        <button class="chip active" data-dept="all">All Departments</button>
+        <button class="chip" data-dept="stem">STEM & Tech</button>
+        <button class="chip" data-dept="humanities">Humanities & English</button>
+        <button class="chip" data-dept="arts">Arts & Music</button>
+        <button class="chip" data-dept="sports">Athletics & PE</button>
+        <button class="chip" data-dept="special">Special Education</button>
+      </div>
+
+      <!-- Teachers Grid Container -->
+      <div class="teachers-grid" id="teachers-grid">
+        <!-- JS dynamically populates teacher cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Teacher Detail Modal -->
+  <div class="modal" id="teacher-modal" aria-hidden="true">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>APEX HORIZON ACADEMY</span>
+        </a>
+        <p class="footer-desc">Nurturing intellect, character, and leadership in every student since 1998.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="teachers.html">Faculty Directory</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="portal.html">Teacher Suite</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="facilities.html">Campus Facilities</a></li>
+          <li><a href="events.html">Events Calendar</a></li>
+          <li><a href="game.html">School Quest Arcade</a></li>
+          <li><a href="contact.html">Admissions Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Emergency Hotline</h4>
+        <p>Campus Security 24/7: <strong>(555) 911-APEX</strong></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 Apex Horizon Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/audio.js"></script>
+  <script src="js/teachers.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Suite & Student Portal | Apex Horizon Academy</title>
+  <meta name="description" content="Digital educator toolkit and student learning portal. Manage attendance, gradebook GPA calculations, lesson plans, teacher profiles, and practice quizzes.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">APEX HORIZON</span>
+          <span class="brand-sub">ACADEMY</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="teachers.html" class="nav-link">Teachers Directory</a></li>
+          <li><a href="academics.html" class="nav-link">Academics</a></li>
+          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="portal.html" class="nav-link active">Teacher & Student Suite</a></li>
+          <li><a href="game.html" class="nav-link highlight-link"><i class="fa-solid fa-gamepad"></i> School Quest</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="portal.html" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-user-gear"></i> Portal Access
+        </a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner bg-subtle">
+    <div class="container">
+      <div class="banner-content">
+        <span class="section-tag"><i class="fa-solid fa-chalkboard"></i> Educator & Student Portal</span>
+        <h1 class="page-title">Digital Classroom Suite</h1>
+        <p class="page-subtitle">Real-time attendance logging, GPA gradebook calculator, lesson planner, profile editor, and student quizzes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Teacher Suite Section -->
+  <section class="teacher-suite-section" id="teacher-suite">
+    <div class="container">
+      <div class="suite-card">
+        <div class="suite-tabs">
+          <button class="suite-tab-btn active" data-suite="attendance"><i class="fa-solid fa-clipboard-user"></i> Attendance Logger</button>
+          <button class="suite-tab-btn" data-suite="gradebook"><i class="fa-solid fa-calculator"></i> Gradebook & GPA</button>
+          <button class="suite-tab-btn" data-suite="lesson"><i class="fa-solid fa-pen-ruler"></i> Lesson Planner</button>
+          <button class="suite-tab-btn" data-suite="profile-editor"><i class="fa-solid fa-id-card"></i> My About Me Profile</button>
+        </div>
+
+        <div class="suite-content">
+          <!-- Attendance Logger Suite -->
+          <div class="suite-pane active" id="suite-attendance">
+            <div class="suite-pane-header">
+              <div class="class-selector-group">
+                <label for="class-select"><strong>Select Class:</strong></label>
+                <select id="class-select" class="form-select">
+                  <option value="math101">Grade 10 - Advanced Physics (Period 2)</option>
+                  <option value="cs202">Grade 11 - Computer Science (Period 4)</option>
+                  <option value="eng301">Grade 12 - AP Literature (Period 6)</option>
+                </select>
+                <span class="badge badge-info" id="attendance-date-badge">Today: <span id="current-date-str"></span></span>
+              </div>
+              <button class="btn btn-emerald btn-sm" id="btn-save-attendance"><i class="fa-solid fa-check"></i> Save Attendance</button>
+            </div>
+
+            <div class="attendance-summary-bar">
+              <div class="att-stat"><span id="att-present-count" class="badge-present">0</span> Present</div>
+              <div class="att-stat"><span id="att-absent-count" class="badge-absent">0</span> Absent</div>
+              <div class="att-stat"><span id="att-late-count" class="badge-late">0</span> Late</div>
+              <div class="att-stat"><strong>Attendance Rate:</strong> <span id="att-percentage">100%</span></div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table" id="attendance-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Student Name</th>
+                    <th>Roll ID</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody id="attendance-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Gradebook Suite -->
+          <div class="suite-pane" id="suite-gradebook">
+            <div class="suite-pane-header">
+              <h3><i class="fa-solid fa-chart-column"></i> Weighted Gradebook Calculator</h3>
+              <button class="btn btn-primary btn-sm" id="add-student-btn"><i class="fa-solid fa-user-plus"></i> Add Student Score</button>
+            </div>
+            
+            <div class="grid grid-2 gradebook-layout">
+              <div class="gradebook-table-col">
+                <div class="table-responsive">
+                  <table class="data-table" id="gradebook-table">
+                    <thead>
+                      <tr>
+                        <th>Student Name</th>
+                        <th>Homework (20%)</th>
+                        <th>Midterm (40%)</th>
+                        <th>Final (40%)</th>
+                        <th>Overall Grade</th>
+                      </tr>
+                    </thead>
+                    <tbody id="gradebook-tbody">
+                      <!-- Populated via JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="gradebook-stats-col">
+                <div class="grade-analytics-box">
+                  <h4><i class="fa-solid fa-chart-pie"></i> Class Performance Summary</h4>
+                  <div class="metric-row">
+                    <span>Class Average:</span>
+                    <strong id="class-avg-display" class="metric-val">88.5% (B+)</strong>
+                  </div>
+                  <div class="metric-row">
+                    <span>Highest Score:</span>
+                    <strong id="class-highest-display" class="metric-val">98.0% (A+)</strong>
+                  </div>
+                  <div class="metric-row">
+                    <span>Passing Students:</span>
+                    <strong id="class-pass-display" class="metric-val">100%</strong>
+                  </div>
+                  <div class="grade-distribution-bar">
+                    <div class="dist-seg seg-a" title="A Grade: 60%" style="width: 60%;">A (60%)</div>
+                    <div class="dist-seg seg-b" title="B Grade: 30%" style="width: 30%;">B (30%)</div>
+                    <div class="dist-seg seg-c" title="C Grade: 10%" style="width: 10%;">C</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lesson Planner Suite -->
+          <div class="suite-pane" id="suite-lesson">
+            <div class="lesson-planner-grid">
+              <div class="planner-form">
+                <h4><i class="fa-solid fa-pen-to-square"></i> Quick Lesson Creator</h4>
+                <div class="form-group">
+                  <label for="lesson-title">Lesson Title:</label>
+                  <input type="text" id="lesson-title" class="form-control" placeholder="e.g. Newton's Third Law of Motion & Rocket Physics">
+                </div>
+                <div class="form-group">
+                  <label for="lesson-subject">Subject & Grade:</label>
+                  <input type="text" id="lesson-subject" class="form-control" placeholder="Physics - Grade 10">
+                </div>
+                <div class="form-group">
+                  <label for="lesson-objective">Learning Objectives:</label>
+                  <textarea id="lesson-objective" class="form-control" rows="3" placeholder="- Understand action and reaction force pairs.&#10;- Calculate momentum transfers in collision scenarios."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="lesson-activities">Classroom Activities:</label>
+                  <textarea id="lesson-activities" class="form-control" rows="3" placeholder="1. 10-min Warmup Quiz&#10;2. Interactive Physics Simulator demonstration&#10;3. Group experiment with balloon rockets."></textarea>
+                </div>
+                <button class="btn btn-primary" id="save-lesson-btn"><i class="fa-solid fa-floppy-disk"></i> Save Lesson Plan</button>
+              </div>
+
+              <div class="saved-lessons-box">
+                <h4><i class="fa-solid fa-folder-open"></i> Saved Lesson Plans</h4>
+                <div id="saved-lessons-list" class="saved-lessons-list">
+                  <!-- Populated via JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- My About Me Profile Editor Suite -->
+          <div class="suite-pane" id="suite-profile-editor">
+            <div class="lesson-planner-grid">
+              <div class="planner-form">
+                <h4><i class="fa-solid fa-user-pen"></i> Edit My About Me Profile</h4>
+                <form id="teacher-profile-editor-form">
+                  <div class="grid grid-2" style="gap: 1rem; margin-bottom: 0;">
+                    <div class="form-group">
+                      <label for="edit-teacher-name">Full Name:</label>
+                      <input type="text" id="edit-teacher-name" class="form-control" placeholder="e.g. Dr. Alex Mercer" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="edit-teacher-dept">Department:</label>
+                      <select id="edit-teacher-dept" class="form-control" required>
+                        <option value="stem">STEM & Tech</option>
+                        <option value="humanities">Humanities & English</option>
+                        <option value="arts">Arts & Music</option>
+                        <option value="sports">Athletics & PE</option>
+                        <option value="special">Special Education</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-teacher-subject">Subject Taught:</label>
+                    <input type="text" id="edit-teacher-subject" class="form-control" placeholder="e.g. AP Environmental Science & Robotics" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-teacher-degree">Degree & Credentials:</label>
+                    <input type="text" id="edit-teacher-degree" class="form-control" placeholder="e.g. Ph.D. Environmental Engineering (Stanford)" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-teacher-bio">About Me & Teaching Philosophy:</label>
+                    <textarea id="edit-teacher-bio" class="form-control" rows="3" placeholder="Tell students and parents about your passion for teaching, background, and approach..." required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-teacher-hobbies">Hobbies & Fun Facts:</label>
+                    <input type="text" id="edit-teacher-hobbies" class="form-control" placeholder="e.g. Stargazing, Marathon Running, Board Games">
+                  </div>
+                  <button type="submit" class="btn btn-emerald"><i class="fa-solid fa-cloud-arrow-up"></i> Save & Publish About Me Profile</button>
+                  <div id="profile-editor-toast" class="form-toast hidden"></div>
+                </form>
+              </div>
+
+              <div class="saved-lessons-box">
+                <h4><i class="fa-solid fa-eye"></i> Live Directory Preview</h4>
+                <div id="teacher-profile-preview" class="teacher-card" style="margin-top: 1rem;">
+                  <!-- Live preview populated by JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Student Portal Section -->
+  <section class="student-portal-section" id="student-portal">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Student Corner</span>
+          <h2 class="section-title">Interactive Practice Quiz & Timetable</h2>
+          <p class="section-subtitle">Test your knowledge, review daily schedules, and download educational resources.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- Interactive Quiz Component -->
+        <div class="quiz-card">
+          <div class="quiz-header">
+            <h3><i class="fa-solid fa-circle-question"></i> Apex Daily Knowledge Challenge</h3>
+            <span class="badge badge-primary" id="quiz-progress-badge">Question 1 of 4</span>
+          </div>
+          <div class="quiz-body">
+            <div id="quiz-question-container">
+              <h4 id="quiz-question-text">Loading question...</h4>
+              <div class="quiz-options" id="quiz-options-container">
+                <!-- Quiz options generated by JS -->
+              </div>
+              <div id="quiz-feedback" class="quiz-feedback hidden"></div>
+            </div>
+            <div class="quiz-controls">
+              <button class="btn btn-outline btn-sm" id="prev-quiz-btn" disabled>Previous</button>
+              <button class="btn btn-primary btn-sm" id="next-quiz-btn">Next Question</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Timetable & Quick Resources -->
+        <div class="timetable-card">
+          <h3><i class="fa-solid fa-calendar-days"></i> Today's Schedule</h3>
+          <ul class="schedule-list">
+            <li class="schedule-item active">
+              <span class="time-badge">08:30 AM - 09:45 AM</span>
+              <div class="item-info">
+                <strong>AP Physics C</strong>
+                <small>Room 302 &bull; Dr. Robert Vance</small>
+              </div>
+              <span class="badge badge-emerald">In Session</span>
+            </li>
+            <li class="schedule-item">
+              <span class="time-badge">10:00 AM - 11:15 AM</span>
+              <div class="item-info">
+                <strong>Algebra II & Trigonometry</strong>
+                <small>Room 108 &bull; Prof. Sarah Jenkins</small>
+              </div>
+            </li>
+            <li class="schedule-item">
+              <span class="time-badge">11:30 AM - 12:30 PM</span>
+              <div class="item-info">
+                <strong>World History & Civics</strong>
+                <small>Room 214 &bull; Marcus Holloway</small>
+              </div>
+            </li>
+            <li class="schedule-item">
+              <span class="time-badge">01:30 PM - 02:45 PM</span>
+              <div class="item-info">
+                <strong>Computer Science & Web Dev</strong>
+                <small>Tech Lab B &bull; Elena Rostova</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>APEX HORIZON ACADEMY</span>
+        </a>
+        <p class="footer-desc">Nurturing intellect, character, and leadership in every student since 1998.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="teachers.html">Faculty Directory</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="portal.html">Teacher Suite</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="facilities.html">Campus Facilities</a></li>
+          <li><a href="events.html">Events Calendar</a></li>
+          <li><a href="game.html">School Quest Arcade</a></li>
+          <li><a href="contact.html">Admissions Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Emergency Hotline</h4>
+        <p>Campus Security 24/7: <strong>(555) 911-APEX</strong></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 Apex Horizon Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/audio.js"></script>
+  <script src="js/portal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
