@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
-  <!-- Header / Navigation -->
+  <!-- Navigation & Header -->
   <header class="site-header" id="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo">
@@ -35,7 +35,7 @@
       <nav class="main-nav" id="main-nav">
         <ul class="nav-list">
           <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#about-me" class="nav-link">About Me</a></li>
           <li><a href="#teachers" class="nav-link">Teachers Directory</a></li>
           <li><a href="#academics" class="nav-link">Academics</a></li>
           <li><a href="#teacher-suite" class="nav-link">Teacher Suite</a></li>
@@ -76,8 +76,8 @@
           Welcome to Apex Horizon Academy. We combine innovative digital learning tools, world-class faculty, and vibrant campus life to foster curiosity, character, and academic mastery.
         </p>
         <div class="hero-buttons animate-fade-up delay-2">
-          <a href="#teachers" class="btn btn-primary btn-lg">
-            <i class="fa-solid fa-chalkboard-user"></i> Meet Our Faculty
+          <a href="#about-me" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-user-tie"></i> Principal's About Me
           </a>
           <a href="#game-section" class="btn btn-outline btn-lg">
             <i class="fa-solid fa-play"></i> Play School Quest Game
@@ -126,6 +126,67 @@
               <div class="floating-bubble bubble-3">
                 <i class="fa-solid fa-laptop-code"></i> AI & Robotics Lab
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principal's About Me Section -->
+  <section class="about-me-section" id="about-me">
+    <div class="container">
+      <div class="about-me-card">
+        <div class="about-me-grid">
+          <div class="about-me-visual">
+            <div class="profile-avatar-circle">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div class="profile-title-tag">
+              <h3>Dr. Elizabeth Morgan</h3>
+              <span>Principal & Head of School</span>
+            </div>
+            <div class="profile-quick-stats">
+              <div class="p-stat">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                  <strong>Ph.D. Education</strong>
+                  <small>Harvard University</small>
+                </div>
+              </div>
+              <div class="p-stat">
+                <i class="fa-solid fa-clock-history"></i>
+                <div>
+                  <strong>20+ Years</strong>
+                  <small>Educational Leadership</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-me-content">
+            <span class="section-tag"><i class="fa-solid fa-heart"></i> Principal's Welcome & About Me</span>
+            <h2 class="section-title">"Education is not the filling of a pail, but the lighting of a fire."</h2>
+            
+            <p class="about-me-text">
+              Welcome to Apex Horizon Academy! As Principal, my lifelong passion has been creating vibrant, inclusive, and academically rigorous learning environments where every student feels valued, challenged, and inspired.
+            </p>
+
+            <div class="quote-box">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p>My mission as an educator is to empower teachers with state-of-the-art tools and nurture students to become curious, compassionate, and resilient global citizens.</p>
+              <strong class="quote-author">&mdash; Dr. Elizabeth Morgan, Head of School</strong>
+            </div>
+
+            <div class="about-me-highlights">
+              <div class="highlight-pill"><i class="fa-solid fa-bullseye"></i> <strong>Core Focus:</strong> STEM & Creative Humanities</div>
+              <div class="highlight-pill"><i class="fa-solid fa-compass"></i> <strong>Values:</strong> Integrity, Curiosity, Kindness</div>
+              <div class="highlight-pill"><i class="fa-solid fa-icons"></i> <strong>Hobbies:</strong> Chess, Astrophysics & Violin</div>
+            </div>
+
+            <div class="about-me-actions">
+              <a href="#teachers" class="btn btn-primary"><i class="fa-solid fa-users"></i> Meet My Faculty Team</a>
+              <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-calendar-check"></i> Book Principal's Hours</a>
             </div>
           </div>
         </div>
@@ -302,6 +363,7 @@
           <button class="suite-tab-btn active" data-suite="attendance"><i class="fa-solid fa-clipboard-user"></i> Attendance Logger</button>
           <button class="suite-tab-btn" data-suite="gradebook"><i class="fa-solid fa-calculator"></i> Gradebook & GPA</button>
           <button class="suite-tab-btn" data-suite="lesson"><i class="fa-solid fa-pen-ruler"></i> Lesson Planner</button>
+          <button class="suite-tab-btn" data-suite="profile-editor"><i class="fa-solid fa-id-card"></i> My About Me Profile</button>
         </div>
 
         <div class="suite-content">
@@ -425,6 +487,58 @@
                 <h4><i class="fa-solid fa-folder-open"></i> Saved Lesson Plans</h4>
                 <div id="saved-lessons-list" class="saved-lessons-list">
                   <!-- Populated via JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- My About Me Profile Editor Suite -->
+          <div class="suite-pane" id="suite-profile-editor">
+            <div class="lesson-planner-grid">
+              <div class="planner-form">
+                <h4><i class="fa-solid fa-user-pen"></i> Edit My About Me Profile</h4>
+                <form id="teacher-profile-editor-form">
+                  <div class="grid grid-2" style="gap: 1rem; margin-bottom: 0;">
+                    <div class="form-group">
+                      <label for="edit-teacher-name">Full Name:</label>
+                      <input type="text" id="edit-teacher-name" class="form-control" placeholder="e.g. Dr. Alex Mercer" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="edit-teacher-dept">Department:</label>
+                      <select id="edit-teacher-dept" class="form-control" required>
+                        <option value="stem">STEM & Tech</option>
+                        <option value="humanities">Humanities & English</option>
+                        <option value="arts">Arts & Music</option>
+                        <option value="sports">Athletics & PE</option>
+                        <option value="special">Special Education</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-teacher-subject">Subject Taught:</label>
+                    <input type="text" id="edit-teacher-subject" class="form-control" placeholder="e.g. AP Environmental Science & Robotics" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-teacher-degree">Degree & Credentials:</label>
+                    <input type="text" id="edit-teacher-degree" class="form-control" placeholder="e.g. Ph.D. Environmental Engineering (Stanford)" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-teacher-bio">About Me & Teaching Philosophy:</label>
+                    <textarea id="edit-teacher-bio" class="form-control" rows="3" placeholder="Tell students and parents about your passion for teaching, background, and approach..." required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-teacher-hobbies">Hobbies & Fun Facts:</label>
+                    <input type="text" id="edit-teacher-hobbies" class="form-control" placeholder="e.g. Stargazing, Marathon Running, Board Games">
+                  </div>
+                  <button type="submit" class="btn btn-emerald"><i class="fa-solid fa-cloud-arrow-up"></i> Save & Publish About Me Profile</button>
+                  <div id="profile-editor-toast" class="form-toast hidden"></div>
+                </form>
+              </div>
+
+              <div class="saved-lessons-box">
+                <h4><i class="fa-solid fa-eye"></i> Live Directory Preview</h4>
+                <div id="teacher-profile-preview" class="teacher-card" style="margin-top: 1rem;">
+                  <!-- Live preview populated by JS -->
                 </div>
               </div>
             </div>

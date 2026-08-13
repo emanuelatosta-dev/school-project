@@ -400,10 +400,112 @@ function initSuiteTabSwitcher() {
   });
 }
 
+// --- My About Me Profile Editor Module ---
+function initProfileEditorModule() {
+  const form = document.getElementById('teacher-profile-editor-form');
+  const preview = document.getElementById('teacher-profile-preview');
+  const toast = document.getElementById('profile-editor-toast');
+
+  if (!form || !preview) return;
+
+  function updatePreview() {
+    const name = document.getElementById('edit-teacher-name').value.trim() || "Dr. Alex Mercer";
+    const dept = document.getElementById('edit-teacher-dept').value;
+    const subject = document.getElementById('edit-teacher-subject').value.trim() || "AP Environmental Science & Robotics";
+    const degree = document.getElementById('edit-teacher-degree').value.trim() || "Ph.D. Environmental Engineering (Stanford)";
+    const bio = document.getElementById('edit-teacher-bio').value.trim() || "Passionate about empowering students to solve climate and robotics challenges.";
+    const hobbies = document.getElementById('edit-teacher-hobbies').value.trim() || "Stargazing, Marathon Running";
+
+    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || "AM";
+
+    preview.innerHTML = `
+      <div class="teacher-card-header">
+        <div class="teacher-avatar">${initials}</div>
+        <div class="teacher-meta">
+          <h3>${name}</h3>
+          <span class="teacher-subject">${subject}</span>
+        </div>
+      </div>
+      <div class="teacher-card-body">
+        <div>
+          <div class="teacher-info-item">
+            <i class="fa-solid fa-graduation-cap"></i> ${degree}
+          </div>
+          <div class="teacher-info-item">
+            <i class="fa-solid fa-user"></i> <strong>About Me:</strong> ${bio.substring(0, 75)}...
+          </div>
+          ${hobbies ? `<div class="teacher-info-item"><i class="fa-solid fa-icons"></i> ${hobbies}</div>` : ''}
+        </div>
+      </div>
+      <div class="teacher-card-footer">
+        <span class="badge badge-accent"><i class="fa-solid fa-star"></i> 5.0 / 5</span>
+        <span class="badge badge-info">Preview Mode</span>
+      </div>
+    `;
+  }
+
+  form.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener('input', updatePreview);
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('edit-teacher-name').value.trim();
+    const dept = document.getElementById('edit-teacher-dept').value;
+    const subject = document.getElementById('edit-teacher-subject').value.trim();
+    const degree = document.getElementById('edit-teacher-degree').value.trim();
+    const bio = document.getElementById('edit-teacher-bio').value.trim();
+    const hobbies = document.getElementById('edit-teacher-hobbies').value.trim();
+
+    if (!name || !subject || !degree || !bio) return;
+
+    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || "AM";
+
+    const newTeacher = {
+      id: Date.now(),
+      name,
+      dept,
+      subject,
+      degree,
+      experience: "5+ Years",
+      email: `${name.toLowerCase().replace(/[^a-z]/g, '.')}@apexhorizon.edu`,
+      officeHours: "Daily 3:00 PM - 4:00 PM",
+      rating: "5.0 / 5",
+      bio,
+      hobbies,
+      avatar: initials
+    };
+
+    if (window.teachersData) {
+      window.teachersData.unshift(newTeacher);
+      const grid = document.getElementById('teachers-grid');
+      if (grid && window.initTeachersDirectory) {
+        window.initTeachersDirectory();
+      }
+    }
+
+    if (toast) {
+      toast.className = 'form-toast success';
+      toast.textContent = `Congratulations, ${name}! Your About Me profile has been published to the Teachers Directory!`;
+      toast.classList.remove('hidden');
+
+      if (window.soundEngine) window.soundEngine.playCollect();
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+  });
+
+  updatePreview();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initAttendanceModule();
   initGradebookModule();
   initLessonPlannerModule();
   initQuizModule();
+  initProfileEditorModule();
   initSuiteTabSwitcher();
 });

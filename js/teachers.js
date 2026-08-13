@@ -238,14 +238,21 @@ function openTeacherModal(teacherId) {
     </div>
 
     <div style="margin-bottom: 1.5rem;">
-      <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Academic Background</h4>
+      <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Academic Background & Credentials</h4>
       <p style="color: var(--text-muted); font-size: 0.95rem;">${teacher.degree}</p>
     </div>
 
     <div style="margin-bottom: 1.5rem;">
-      <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Teaching Philosophy & Bio</h4>
+      <h4 style="margin-bottom: 0.5rem; color: var(--primary);"><i class="fa-solid fa-user"></i> About Me & Teaching Philosophy</h4>
       <p style="color: var(--text-main); line-height: 1.6; font-size: 0.95rem;">${teacher.bio}</p>
     </div>
+
+    ${teacher.hobbies ? `
+    <div style="margin-bottom: 1.5rem; background: var(--primary-light); padding: 0.85rem 1rem; border-radius: var(--radius-sm); border-left: 3px solid var(--primary);">
+      <h5 style="color: var(--primary); margin-bottom: 0.25rem;"><i class="fa-solid fa-icons"></i> Personal Hobbies & Fun Facts</h5>
+      <p style="font-size: 0.9rem; color: var(--text-main);">${teacher.hobbies}</p>
+    </div>
+    ` : ''}
 
     <div style="margin-bottom: 1.5rem;">
       <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Office Hours & Contact</h4>
@@ -311,6 +318,9 @@ function initModalClose() {
     }
   });
 }
+
+window.teachersData = teachersData;
+window.initTeachersDirectory = initTeachersDirectory;
 
 document.addEventListener('DOMContentLoaded', () => {
   initTeachersDirectory();

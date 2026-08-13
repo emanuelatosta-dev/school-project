@@ -600,11 +600,160 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: translateY(-12px); }
 }
 
-/* About Section */
-.about-section {
+/* Principal About Me Section */
+.about-me-section {
   padding: 5rem 0;
-  background: var(--bg-subtle);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
+  border-bottom: 1px solid var(--border-color);
 }
+
+.about-me-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+}
+
+.about-me-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .about-me-grid { grid-template-columns: 1fr; }
+}
+
+.about-me-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-subtle);
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.profile-avatar-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  box-shadow: var(--shadow-glow);
+  margin-bottom: 1.25rem;
+}
+
+.profile-title-tag h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+.profile-title-tag span {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-quick-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  width: 100%;
+}
+.p-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--bg-card);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+.p-stat i {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.about-me-content .section-title {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+.about-me-text {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.quote-box {
+  position: relative;
+  background: var(--primary-light);
+  border-left: 4px solid var(--primary);
+  padding: 1.25rem 1.5rem 1.25rem 3rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+}
+[data-theme="dark"] .quote-box {
+  background: rgba(37, 99, 235, 0.15);
+}
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.4rem;
+  color: var(--primary);
+  opacity: 0.6;
+}
+.quote-box p {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+.quote-author {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+.about-me-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.highlight-pill {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.highlight-pill i {
+  color: var(--secondary);
+}
+
+.about-me-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Feature Card Hover & General About Utilities */
+
 
 .feature-card {
   background: var(--bg-card);
